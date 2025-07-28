@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Business Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Business List Panel -->
+    <div class="business-panel" id="business-panel">
+        <div class="panel-header">
+            <h3>Businesses in <span id="panel-city">Bulawayo</span></h3>
+            <button class="close-panel" id="close-panel">×</button>
+        </div>
+        <div class="panel-filters">
+            <select id="panel-business-type">
+                <option value="">All Types</option>
+                <option value="restaurant">Restaurant</option>
+                <option value="fast_food">Fast Food</option>
+                <option value="tourism">Tourism</option>
+            </select>
+            <span id="panel-business-count">0 businesses</span>
+        </div>
+        <div class="business-list" id="business-list">
+            <!-- Business items will be populated here -->
+        </div>
+    </div>
+
+    <!-- Filter Controls -->
+    <div class="filter-container">
+        <div class="filter-content">
+            <div class="location-info">
+                <span id="current-city">Detecting location...</span>
+                <div class="business-counter">
+                    <span id="business-count">0 businesses found</span>
+                </div>
+                <div class="city-override">
+                    <label for="manual-city">Or enter your city:</label>
+                    <input type="text" id="manual-city" placeholder="e.g., Bulawayo" />
+                    <div class="city-buttons">
+                        <button id="set-city-btn">Set City</button>
+                        <button id="back-to-bulawayo-btn" class="btn-bulawayo">🇿🇼 Bulawayo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button id="show-businesses-btn" class="btn-primary">Show Business List</button>
+                <button id="my-location-btn" class="btn-secondary">📍 My Location</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-overlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Loading your city's businesses...</p>
+        </div>
+    </div>
+
+    <div id="error-modal" class="modal">
+        <div class="modal-content">
+            <h3>Location Access Required</h3>
+            <p>This app needs access to your location to show businesses in your city. Please allow location access and
+                refresh the page.</p>
+            <button onclick="location.reload()">Refresh Page</button>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
