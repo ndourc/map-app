@@ -2,7 +2,7 @@
 
 A dynamic single-page web application that displays businesses in your current city using interactive maps. The application automatically detects your location, centers the map on your city, and shows business locations with filtering capabilities.
 
-## ✨ Features
+## Features
 
 - **📍 Automatic Location Detection**: Uses browser geolocation to find your current position
 - **🗺️ Interactive Map**: Built with Leaflet.js and OpenStreetMap for smooth navigation
@@ -46,8 +46,7 @@ A dynamic single-page web application that displays businesses in your current c
 
 1. **Clone or download the project**
    ```bash
-   git clone <repository-url>
-   cd city-business-map
+   git clone https://github.com/ndourc/map-app.git
    ```
 
 2. **Set up the web server**
